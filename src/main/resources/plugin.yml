@@ -1,0 +1,16 @@
+name: Simplehitman
+version: '${project.version}'
+main: com.soychristian.simplehitman.Simplehitman
+api-version: 1.18
+authors: [ Christian ]
+description: Offer rewards for the head's players.
+website: soychristian.com
+commands:
+  simplehitman:
+    description: Main command.
+    usage: /<command>
+    aliases:
+      - sh
+      - asesinos
+      - contrato
+

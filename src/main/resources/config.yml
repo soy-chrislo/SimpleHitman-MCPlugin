@@ -1,0 +1,22 @@
+kill-himself-reward: "Buen intento vaquero..."
+kill-objetive: "Has asesinado a un usuario marcado. Has cobrado su recompensa: "
+broadcast-kill-objetive: "ha cobrado la recompensa por la cabeza de: "
+
+enter-username: "Ingresa el nombre del jugador a cazar: "
+offer-reward: "Agrega una recompensa por la cabeza de este usuario: /sh <player> <money>"
+succesful-contract: "Se ha puesto recompensa por la cabeza de este usuario."
+broadcast-succesfull-contract: "ha puesto una recompensa por la cabeza de: "
+user-not-found: "Usuario no encontrado."
+insufficient-money: "No tienes dinero suficiente para ofrecer una recompensa."
+enter-numeric-value: "Debes ingresar un valor númerico."
+increase-reward: "ha aumentado la recompensa por la cabeza de "
+
+reload-config: "Configuración recargada."
+
+empty-list: "Actualmente no hay jugadores con recompensas, agrega a uno con /sh."
+message-list: "Lista de jugadores con recompensas: "
+
+remove-list: "ha sido retirado de la lista de recompensas."
+insufficient-permission: "No tienes los permisos para ejecutar este comando."
+
+available-commands: "Los comandos disponibles son: "
