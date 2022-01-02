@@ -6,7 +6,7 @@ import com.soychristian.simplehitman.commands.SubCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-public class ShowListContractsCommand extends SubCommand {
+public class ShowListCommand extends SubCommand {
     String pluginName = Simplehitman.pluginName;
 
     String emptyList = Simplehitman.getPlugin().getConfig().getString("empty-list");

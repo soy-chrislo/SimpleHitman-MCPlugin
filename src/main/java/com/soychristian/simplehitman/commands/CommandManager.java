@@ -3,8 +3,8 @@ package com.soychristian.simplehitman.commands;
 import com.soychristian.simplehitman.Simplehitman;
 import com.soychristian.simplehitman.commands.subcommands.HuntCommand;
 import com.soychristian.simplehitman.commands.subcommands.ReloadCommand;
-import com.soychristian.simplehitman.commands.subcommands.RemoveFromListCommand;
-import com.soychristian.simplehitman.commands.subcommands.ShowListContractsCommand;
+import com.soychristian.simplehitman.commands.subcommands.RemoveUserListCommand;
+import com.soychristian.simplehitman.commands.subcommands.ShowListCommand;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -27,15 +27,13 @@ public class CommandManager implements CommandExecutor {
 
     public CommandManager() {
         subCommands.add(new ReloadCommand());
-        subCommands.add(new ShowListContractsCommand());
+        subCommands.add(new ShowListCommand());
         subCommands.add(new HuntCommand());
-        subCommands.add(new RemoveFromListCommand());
+        subCommands.add(new RemoveUserListCommand());
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        // /simplehitman
-        // Arreglar jerarquia de comandos, no es posible ejecutar comando remove
         if (sender instanceof Player player) {
             if (args.length > 0) {
                 for (int i = 0; i < getSubCommands().size(); i++) {

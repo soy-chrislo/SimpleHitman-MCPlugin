@@ -7,7 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-public class RemoveFromListCommand extends SubCommand {
+public class RemoveUserListCommand extends SubCommand {
     String pluginName = Simplehitman.pluginName;
 
     String removeList = Simplehitman.getPlugin().getConfig().getString("remove-list");
