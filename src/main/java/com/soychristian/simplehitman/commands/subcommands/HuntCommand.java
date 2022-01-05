@@ -12,21 +12,21 @@ public class HuntCommand extends SubCommand {
     private final Economy eco = Simplehitman.getEconomy();
 
     Simplehitman plugin;
+    String enterUsername, offerReward, successfulContract, broadcastSuccessfulContract, userNotFound, insufficientMoney, enterNumericValue, increaseReward;
 
     public HuntCommand(Simplehitman plugin) {
         this.plugin = plugin;
+        this.enterUsername = this.plugin.getConfig().getString("enter-username");
+        this.offerReward = this.plugin.getConfig().getString("offer-reward");
+        this.successfulContract = this.plugin.getConfig().getString("succesful-contract");
+        this.broadcastSuccessfulContract = this.plugin.getConfig().getString("broadcast-succesfull-contract");
+        this.userNotFound = this.plugin.getConfig().getString("user-not-found");
+        this.insufficientMoney = this.plugin.getConfig().getString("insufficient-money");
+        this.enterNumericValue = this.plugin.getConfig().getString("enter-numeric-value");
+        this.increaseReward = this.plugin.getConfig().getString("increase-reward");
     }
 
     String pluginName = Simplehitman.pluginName;
-
-    String enterUsername = plugin.getConfig().getString("enter-username");
-    String offerReward = plugin.getConfig().getString("offer-reward");
-    String successfulContract = plugin.getConfig().getString("succesful-contract");
-    String broadcastSuccessfulContract = plugin.getConfig().getString("broadcast-succesfull-contract");
-    String userNotFound = plugin.getConfig().getString("user-not-found");
-    String insufficientMoney = plugin.getConfig().getString("insufficient-money");
-    String enterNumericValue = plugin.getConfig().getString("enter-numeric-value");
-    String increaseReward = plugin.getConfig().getString("increase-reward");
 
     @Override
     public String getName() {

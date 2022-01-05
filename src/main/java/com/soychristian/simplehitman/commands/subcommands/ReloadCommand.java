@@ -7,14 +7,15 @@ import org.bukkit.entity.Player;
 
 public class ReloadCommand extends SubCommand {
     Simplehitman plugin;
+    String reloadConfig, insufficientPermission;
 
     public ReloadCommand(Simplehitman plugin) {
         this.plugin = plugin;
+        this.reloadConfig = this.plugin.getConfig().getString("reload-config");
+        this.insufficientPermission = this.plugin.getConfig().getString("insufficient-permission");
     }
 
-    String reloadConfig = plugin.getConfig().getString("reload-config");
     String pluginName = Simplehitman.pluginName;
-    String insufficientPermission = plugin.getConfig().getString("insufficient-permission");
 
     @Override
     public String getName() {

@@ -22,7 +22,7 @@ public class CommandManager implements CommandExecutor {
     Simplehitman plugin;
 
     String pluginName = Simplehitman.pluginName;
-    String availableCommands = plugin.getConfig().getString("available-commands");
+    String availableCommands;
 
     public CommandManager(Simplehitman plugin) {
         subCommands.add(new ReloadCommand(plugin));
@@ -30,6 +30,7 @@ public class CommandManager implements CommandExecutor {
         subCommands.add(new HuntCommand(plugin));
         subCommands.add(new RemoveUserListCommand(plugin));
         this.plugin = plugin;
+        this.availableCommands = this.plugin.getConfig().getString("available-commands");
     }
 
     @Override

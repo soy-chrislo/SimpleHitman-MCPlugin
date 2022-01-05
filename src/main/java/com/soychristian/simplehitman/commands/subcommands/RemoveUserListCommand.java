@@ -9,15 +9,15 @@ import org.bukkit.entity.Player;
 
 public class RemoveUserListCommand extends SubCommand {
     Simplehitman plugin;
+    String removeList, insufficientPermission;
 
     public RemoveUserListCommand(Simplehitman plugin) {
         this.plugin = plugin;
+        this.removeList = this.plugin.getConfig().getString("remove-list");
+        this.insufficientPermission = this.plugin.getConfig().getString("insufficient-permission");
     }
 
     String pluginName = Simplehitman.pluginName;
-
-    String removeList = plugin.getConfig().getString("remove-list");
-    String insufficientPermission = plugin.getConfig().getString("insufficient-permission");
 
     @Override
     public String getName() {

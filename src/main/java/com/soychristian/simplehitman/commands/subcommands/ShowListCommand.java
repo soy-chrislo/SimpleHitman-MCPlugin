@@ -8,14 +8,14 @@ import org.bukkit.entity.Player;
 
 public class ShowListCommand extends SubCommand {
     Simplehitman plugin;
+    String emptyList, messageList;
 
     public ShowListCommand(Simplehitman plugin) {
         this.plugin = plugin;
+        this.emptyList = this.plugin.getConfig().getString("empty-list");
+        this.messageList = this.plugin.getConfig().getString("message-list");
     }
     String pluginName = Simplehitman.pluginName;
-
-    String emptyList = plugin.getConfig().getString("empty-list");
-    String messageList = plugin.getConfig().getString("message-list");
 
     @Override
     public String getName() {
