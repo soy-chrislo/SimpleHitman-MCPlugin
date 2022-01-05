@@ -7,10 +7,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class ShowListCommand extends SubCommand {
-    String pluginName = Simplehitman.pluginName;
+    Simplehitman plugin;
+    String emptyList, messageList;
 
-    String emptyList = Simplehitman.getPlugin().getConfig().getString("empty-list");
-    String messageList = Simplehitman.getPlugin().getConfig().getString("message-list");
+    public ShowListCommand(Simplehitman plugin) {
+        this.plugin = plugin;
+        this.emptyList = this.plugin.getConfig().getString("empty-list");
+        this.messageList = this.plugin.getConfig().getString("message-list");
+    }
+    String pluginName = Simplehitman.pluginName;
 
     @Override
     public String getName() {

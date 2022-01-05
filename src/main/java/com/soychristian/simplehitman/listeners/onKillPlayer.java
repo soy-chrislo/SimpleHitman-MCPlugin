@@ -11,13 +11,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class onKillPlayer implements Listener {
+    Simplehitman plugin;
+
+    String killObjetive, killHimselfReward, broadcastKillObjetive;
+    public onKillPlayer(Simplehitman plugin) {
+        this.plugin = plugin;
+        this.killObjetive = this.plugin.getConfig().getString("kill-objetive");
+        this.killHimselfReward = this.plugin.getConfig().getString("kill-himself-reward");
+        this.broadcastKillObjetive = this.plugin.getConfig().getString("broadcast-kill-objetive");
+    }
+
     private final Economy eco = Simplehitman.getEconomy();
 
     String pluginName = Simplehitman.pluginName;
-
-    String killObjetive = Simplehitman.getPlugin().getConfig().getString("kill-objetive");
-    String killHimselfReward = Simplehitman.getPlugin().getConfig().getString("kill-himself-reward");
-    String broadcastKillObjetive = Simplehitman.getPlugin().getConfig().getString("broadcast-kill-objetive");
 
     @EventHandler
     public void onKillPlayerByPlayer(PlayerDeathEvent event) {
