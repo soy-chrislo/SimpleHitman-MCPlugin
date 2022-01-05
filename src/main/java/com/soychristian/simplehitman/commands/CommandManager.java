@@ -5,7 +5,6 @@ import com.soychristian.simplehitman.commands.subcommands.HuntCommand;
 import com.soychristian.simplehitman.commands.subcommands.ReloadCommand;
 import com.soychristian.simplehitman.commands.subcommands.RemoveUserListCommand;
 import com.soychristian.simplehitman.commands.subcommands.ShowListCommand;
-import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,16 +19,20 @@ public class CommandManager implements CommandExecutor {
     public static ArrayList<Player> listHitman = new ArrayList<>();
     public static ArrayList<String> listReward = new ArrayList<>();
 
-    private final Economy eco = Simplehitman.getEconomy();
+    Simplehitman plugin;
+
+    public CommandManager(Simplehitman plugin) {
+        this.plugin = plugin;
+    }
 
     String pluginName = Simplehitman.pluginName;
-    String availableCommands = Simplehitman.getPlugin().getConfig().getString("available-commands");
+    String availableCommands = plugin.getConfig().getString("available-commands");
 
     public CommandManager() {
-        subCommands.add(new ReloadCommand());
-        subCommands.add(new ShowListCommand());
-        subCommands.add(new HuntCommand());
-        subCommands.add(new RemoveUserListCommand());
+        subCommands.add(new ReloadCommand(plugin));
+        subCommands.add(new ShowListCommand(plugin));
+        subCommands.add(new HuntCommand(plugin));
+        subCommands.add(new RemoveUserListCommand(plugin));
     }
 
     @Override

@@ -6,10 +6,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class ReloadCommand extends SubCommand {
+    Simplehitman plugin;
 
-    String reloadConfig = Simplehitman.getPlugin().getConfig().getString("reload-config");
+    public ReloadCommand(Simplehitman plugin) {
+        this.plugin = plugin;
+    }
+
+    String reloadConfig = plugin.getConfig().getString("reload-config");
     String pluginName = Simplehitman.pluginName;
-    String insufficientPermission = Simplehitman.getPlugin().getConfig().getString("insufficient-permission");
+    String insufficientPermission = plugin.getConfig().getString("insufficient-permission");
 
     @Override
     public String getName() {
@@ -29,7 +34,7 @@ public class ReloadCommand extends SubCommand {
     @Override
     public void perform(Player player, String[] args) {
         if (player.hasPermission("simplehitman.reload")) {
-            Simplehitman.getPlugin().reloadConfig();
+            plugin.reloadConfig();
             player.sendMessage(pluginName + ChatColor.translateAlternateColorCodes('&', reloadConfig));
         } else {
             player.sendMessage(pluginName + ChatColor.translateAlternateColorCodes('&', insufficientPermission));

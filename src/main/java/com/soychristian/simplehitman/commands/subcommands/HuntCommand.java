@@ -11,16 +11,23 @@ import org.bukkit.entity.Player;
 public class HuntCommand extends SubCommand {
     private final Economy eco = Simplehitman.getEconomy();
 
+    Simplehitman plugin;
+
+    public HuntCommand(Simplehitman plugin) {
+        this.plugin = plugin;
+    }
+
     String pluginName = Simplehitman.pluginName;
 
-    String enterUsername = Simplehitman.getPlugin().getConfig().getString("enter-username");
-    String offerReward = Simplehitman.getPlugin().getConfig().getString("offer-reward");
-    String successfulContract = Simplehitman.getPlugin().getConfig().getString("succesful-contract");
-    String broadcastSuccessfulContract = Simplehitman.getPlugin().getConfig().getString("broadcast-succesfull-contract");
-    String userNotFound = Simplehitman.getPlugin().getConfig().getString("user-not-found");
-    String insufficientMoney = Simplehitman.getPlugin().getConfig().getString("insufficient-money");
-    String enterNumericValue = Simplehitman.getPlugin().getConfig().getString("enter-numeric-value");
-    String increaseReward = Simplehitman.getPlugin().getConfig().getString("increase-reward");
+    String enterUsername = plugin.getConfig().getString("enter-username");
+    String offerReward = plugin.getConfig().getString("offer-reward");
+    String successfulContract = plugin.getConfig().getString("succesful-contract");
+    String broadcastSuccessfulContract = plugin.getConfig().getString("broadcast-succesfull-contract");
+    String userNotFound = plugin.getConfig().getString("user-not-found");
+    String insufficientMoney = plugin.getConfig().getString("insufficient-money");
+    String enterNumericValue = plugin.getConfig().getString("enter-numeric-value");
+    String increaseReward = plugin.getConfig().getString("increase-reward");
+
     @Override
     public String getName() {
         return "hunt";

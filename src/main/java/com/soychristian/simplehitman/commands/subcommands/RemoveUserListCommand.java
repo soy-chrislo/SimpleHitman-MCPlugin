@@ -8,10 +8,16 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class RemoveUserListCommand extends SubCommand {
+    Simplehitman plugin;
+
+    public RemoveUserListCommand(Simplehitman plugin) {
+        this.plugin = plugin;
+    }
+
     String pluginName = Simplehitman.pluginName;
 
-    String removeList = Simplehitman.getPlugin().getConfig().getString("remove-list");
-    String insufficientPermission = Simplehitman.getPlugin().getConfig().getString("insufficient-permission");
+    String removeList = plugin.getConfig().getString("remove-list");
+    String insufficientPermission = plugin.getConfig().getString("insufficient-permission");
 
     @Override
     public String getName() {

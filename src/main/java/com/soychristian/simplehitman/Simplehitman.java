@@ -12,28 +12,25 @@ import java.util.logging.Logger;
 public final class Simplehitman extends JavaPlugin {
     private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
-    private static Simplehitman plugin;
 
     public static String pluginName = ChatColor.GOLD + "" +ChatColor.BOLD + "[" + ChatColor.GRAY + "SimpleHitman" + ChatColor.GOLD + ChatColor.BOLD + "] " + ChatColor.WHITE;
 
     @Override
     public void onEnable() {
-        plugin = this;
         if (!setupEconomy() ) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        getCommand("simplehitman").setExecutor(new CommandManager());
-        getServer().getPluginManager().registerEvents(new onKillPlayer(), this);
-
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+        getCommand("simplehitman").setExecutor(new CommandManager());
+        getServer().getPluginManager().registerEvents(new onKillPlayer(this), this);
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        log.info(pluginName + "Disabling plugin.");
     }
 
     private boolean setupEconomy() {
@@ -50,10 +47,5 @@ public final class Simplehitman extends JavaPlugin {
 
     public static Economy getEconomy() {
         return econ;
-    }
-
-
-    public static Simplehitman getPlugin(){
-        return plugin;
     }
 }
