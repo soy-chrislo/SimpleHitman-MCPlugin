@@ -24,7 +24,7 @@ public final class Simplehitman extends JavaPlugin {
         }
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-        getCommand("simplehitman").setExecutor(new CommandManager());
+        getCommand("simplehitman").setExecutor(new CommandManager(this));
         getServer().getPluginManager().registerEvents(new onKillPlayer(this), this);
     }
 

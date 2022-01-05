@@ -12,7 +12,6 @@ public class ShowListCommand extends SubCommand {
     public ShowListCommand(Simplehitman plugin) {
         this.plugin = plugin;
     }
-
     String pluginName = Simplehitman.pluginName;
 
     String emptyList = plugin.getConfig().getString("empty-list");

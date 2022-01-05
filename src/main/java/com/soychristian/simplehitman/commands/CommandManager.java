@@ -21,18 +21,15 @@ public class CommandManager implements CommandExecutor {
 
     Simplehitman plugin;
 
-    public CommandManager(Simplehitman plugin) {
-        this.plugin = plugin;
-    }
-
     String pluginName = Simplehitman.pluginName;
     String availableCommands = plugin.getConfig().getString("available-commands");
 
-    public CommandManager() {
+    public CommandManager(Simplehitman plugin) {
         subCommands.add(new ReloadCommand(plugin));
         subCommands.add(new ShowListCommand(plugin));
         subCommands.add(new HuntCommand(plugin));
         subCommands.add(new RemoveUserListCommand(plugin));
+        this.plugin = plugin;
     }
 
     @Override
